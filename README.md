@@ -2,7 +2,7 @@
     <sub>
         <img  src="https://github.com/DovydasTEDS/TEDSaver/blob/master/images/icon48.png?raw=true" height="38" width="38">
     </sub>
-    RoSaver
+    TEDSaver
 </h1>
 
 <p align="center">
