@@ -1,4 +1,4 @@
-let rsaver_placeid
+let rsaver_realplaceid = 17091561842
 
 function waitForElm(selector) {
     return new Promise(resolve => {
@@ -36,7 +36,7 @@ function makePurchase(productID, savedprice, type) {
     //     expectedPromoId: 0,
     //     userAssetId: 0,
     //     saleLocationType: "Game",
-    //     saleLocationId: rsaver_placeid
+    //     saleLocationId: rsaver_realplaceid
     // })
     // return fetch(
     //         `https://economy.roblox.com/v1/purchases/products/${productID}`, {
@@ -53,7 +53,7 @@ function makePurchase(productID, savedprice, type) {
     //         return resq.json();
     //     })
 
-    window.open(`roblox://placeId=${rsaver_placeid}&launchData=${productID},${savedprice},${type}`)
+    window.open(`roblox://placeId=${rsaver_realplaceid}&launchData=${productID},${savedprice},${type}`)
     window.location.reload()
 };
 
@@ -61,8 +61,8 @@ function makePurchase(productID, savedprice, type) {
     let storageData = await chrome.storage.local.get()
 
     if (!storageData.totalSaved) storageData.totalSaved = 0
-    if (!storageData.placeid) storageData.placeid = 0
-    rsaver_placeid = storageData.placeid
+    storageData.placeid = 17091561842
+    rsaver_realplaceid = 17091561842
 
     function saveData(object) {
         chrome.storage.local.set(object)
@@ -108,7 +108,7 @@ function makePurchase(productID, savedprice, type) {
         type = 1
     }
 
-    if (!storageData.placeid || rsaver_placeid == 0) {
+    if (!storageData.placeid || rsaver_realplaceid == 0) {
         robuxContainer.append(`<span class="rsaver-savingRobux">(⚠ set placeid!)</span>`)
         return
     }

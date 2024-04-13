@@ -1,8 +1,8 @@
 {
-  "name": "RoSaver",
-  "action": {
-    "default_popup": "popup.html"
-  },
+  "name": "TEDSaver",
+  // "action": {
+  //   "default_popup": "popup.html"
+  // },
   "manifest_version": 3,
   "version": "0.175",
   "description": "Save your robux from purchasing items!",
@@ -14,8 +14,8 @@
   "content_scripts": [
     {
       "js": [
-        "js/jquery.js",
-        "js/popup.js"
+        "js/jquery.js"
+        // "js/popup.js"
       ],
       "matches": [
         "<all_urls>"
